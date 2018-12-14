@@ -1,2 +1,0 @@
-/usr/bin/ar qc libime.a  CMakeFiles/ime.dir/imewin.c.o CMakeFiles/ime.dir/pinyin.c.o
-/usr/bin/ranlib libime.a

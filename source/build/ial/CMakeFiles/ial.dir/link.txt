@@ -1,2 +1,0 @@
-/usr/bin/ar qc libial.a  CMakeFiles/ial.dir/keyboard_bd.c.o CMakeFiles/ial.dir/keyboard_ial.c.o CMakeFiles/ial.dir/keyboard_pc.c.o CMakeFiles/ial.dir/mouse_ial.c.o CMakeFiles/ial.dir/mouse_ps2.c.o CMakeFiles/ial.dir/mouse_ts.c.o
-/usr/bin/ranlib libial.a
