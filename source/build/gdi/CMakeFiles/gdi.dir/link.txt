@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgdi.a  CMakeFiles/gdi.dir/gdi.c.o CMakeFiles/gdi.dir/gdibmp.c.o
+/usr/bin/ranlib libgdi.a

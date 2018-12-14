@@ -118,7 +118,7 @@ ShowBitmapWithTrColorWin(
 	iWidth=min(iBmpWidth,iWinWidth);
 	iHeight=min(iBmpHeight,iWinHeight);
 
-	pData=malloc(iWidth*iHeight*_lGUI_iBytesDataType);
+	pData=malloc(iWidth * iHeight * _lGUI_iBytesDataType);
 	if(!pData){
 		fclose(fp);
 		return false;
@@ -133,8 +133,8 @@ ShowBitmapWithTrColorWin(
 
 	pClipRect=((PWindowsTree)(hDC->hWnd))->pClipRgn->pHead;
 	while(pClipRect){
-		if(IntersectRect(&rcDest,&rcSource,&(pClipRect->rect)))
-			PaintRect2ScreenWithTrColor(&rcDest,&rcSource,pData,crTrColor);
+		if(IntersectRect(&rcDest, &rcSource, &(pClipRect->rect)))
+			PaintRect2ScreenWithTrColor(&rcDest, &rcSource, pData, crTrColor);
 		pClipRect=pClipRect->pNext;
 	}
 

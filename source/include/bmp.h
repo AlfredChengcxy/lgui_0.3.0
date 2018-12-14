@@ -23,6 +23,9 @@
 #ifdef __cplusplus                     
 extern "C" {
 #endif
+
+#include <stdio.h>
+
 //bmp file information head
 typedef struct tagBMPFILEHEADER
 {

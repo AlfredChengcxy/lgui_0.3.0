@@ -1,0 +1,1 @@
+/usr/bin/cc     CMakeFiles/lgui.dir/lgui.c.o  -o lgui -rdynamic lguicore/liblguicore.a bmp/libbmp.a control/libcontrol.a gdi/libgdi.a hdc/libhdc.a ial/libial.a ime/libime.a -lc -lm -lpthread bmp/libbmp.a 

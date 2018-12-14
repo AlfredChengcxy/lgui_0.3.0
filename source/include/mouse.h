@@ -24,7 +24,7 @@
 extern "C" {
 #endif
 
-#define RESOURCEFILE	"/usr/local/lgui/resource/mousenew.bmp"
+#define RESOURCEFILE	"/home/zgq/Documents/cpp/lgui_0.3.0/resource/mousenew.bmp"
 
 typedef  struct tagMOUSEINFO{
 	BOOL fHide;				//current status

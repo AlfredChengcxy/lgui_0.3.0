@@ -28,7 +28,7 @@
 #include "../include/winnc.h"
 #include "../include/winbase.h"
 #include "../include/window.h"
-#include "../include/shmem.h"
+#include "../include/lgui_shmem.h"
 #include "../include/gdi.h"
 #include "../include/text.h"
 #include "../include/mouse.h"
@@ -209,6 +209,11 @@ DrawaAscChar(
 	isTextBkTrans	=hDC->isTextBkTrans;
 
 	pFont=GetFont(hDC);
+	if(pFont == NULL)
+	{
+		printf("pfont == NULL\n");
+		return;
+	}
 
 	GetAscFontData(pBuffer,pFont,pChar);
 	pCurPointer=pBuffer;

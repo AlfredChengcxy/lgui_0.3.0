@@ -162,6 +162,7 @@ WndProc(
 	switch(message){
 		case LMSG_CREATE:
 		{
+			printf("desktop: LMSG_CREATE\n");
 			PDeskIconClass pClass;
 
 			pFileName=(char*)lParam;
@@ -238,12 +239,14 @@ WndProc(
 		}
 		case LMSG_SHOWWINDOW:
 		{
+			printf("desktop: LMSG_SHOWWINDOW\n");
 			PDeskIconClass pClass;
 			pClass = GetCurrentClass(hWndTab);
 			ShowClassDeskIcon(pClass);
 			break;
 		}
 		case LMSG_COMMAND:
+			printf("desktop: LMSG_COMMAND\n");
 			switch(HIWORD(wParam)){
 			case BN_CLICKED:
 			
@@ -285,17 +288,21 @@ WndProc(
 			}
 			break;
 		case LMSG_PENDOWN:
+			printf("desktop: LMSG_PENDOWN\n");
 			CaptureMouse(hWnd,BYCLIENT);
 			break;
 		case LMSG_PENMOVE:
-			//hDC=GetWindowDC(hWnd);
-			//winSetPixel(hDC,(int)wParam,(int)lParam,RGB(0,0,0));
-			//ReleaseDC(hWnd,hDC);
+			printf("desktop: LMSG_MOVE\n");
+			hDC=GetWindowDC(hWnd);
+			winSetPixel(hDC,(int)wParam,(int)lParam,RGB(0,0,0));
+			ReleaseDC(hWnd,hDC);
 			break;
 		case LMSG_PENUP:
+			printf("desktop: LMSG_PENUP\n");
 			DisCaptureMouse();
 			break;
 		case LMSG_PAINT:
+			printf("desktop: LMSG_PAINT\n");
 			ps.bPaintDirect=false;
 
 			hDC=BeginPaint(hWnd, &ps);
@@ -306,6 +313,7 @@ WndProc(
 			EndPaint(hWnd, &ps);
 			break;
 		case LMSG_DESTROY:
+			printf("desktop: LMSG_DESTROY\n");
 			DestroyImeWindow();
 			DestroySkbWindow();
 			DestroyStartMenuControl();
@@ -314,6 +322,7 @@ WndProc(
 			break;
 
 		default:
+			printf("desktop: default\n");
 			return DefWndProcDesktop(hWnd, message, wParam, lParam);
 
 	}
@@ -659,14 +668,14 @@ BOOL
 GetDeskIconInfo()
 {
 	struct dirent **pFileList;
-	char pString[MAX_VALUE_SIZE];
+	char pString[MAX_VALUE_SIZE] = {0};
 	char *pEnvStr;
 	int iFileNumber = 0;
 	FILE* fp;
 	int i;
-	char lpszTag[MAX_TAG_SIZE];
-	char lpszItem[MAX_TAG_SIZE];
-	char lpszValue[MAX_VALUE_SIZE];
+	char lpszTag[MAX_TAG_SIZE] = {0};
+	char lpszItem[MAX_TAG_SIZE] = {0};
+	char lpszValue[MAX_VALUE_SIZE] = {0};
 	
 	PDeskIconClass pDeskIconClass;
 	PDeskIconNode pDeskIconNode;

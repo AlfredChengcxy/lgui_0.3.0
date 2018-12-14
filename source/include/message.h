@@ -24,6 +24,7 @@
 extern "C" {
 #endif
 
+#include <signal.h>
 
 typedef struct _MSG {     // msg 
 	HWND	hWnd;     

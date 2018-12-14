@@ -31,7 +31,7 @@
 #include "../include/winnc.h"
 #include "../include/winbase.h"
 #include "../include/window.h"
-#include "../include/shmem.h"
+#include "../include/lgui_shmem.h"
 #include "../include/mouse_ial.h"
 
 #define TRANSCOLOR	RGB(255,0,0)

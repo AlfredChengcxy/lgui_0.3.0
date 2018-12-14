@@ -20,7 +20,7 @@
 
 #include <sys/types.h>
 #include <sys/sem.h>
-#include "../include/semaphore.h"
+#include "../include/lgui_semaphore.h"
 
 //create semaphore
 

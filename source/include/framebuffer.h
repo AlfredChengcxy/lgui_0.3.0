@@ -24,6 +24,8 @@
 extern "C" {
 #endif
 
+#include "common.h"
+
 BOOL 
 InitFrameBuffer();
 

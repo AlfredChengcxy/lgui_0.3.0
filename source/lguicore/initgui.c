@@ -30,7 +30,7 @@
 #include "../include/ipcsocket.h"
 #include "../include/message.h"
 #include "../include/regclass.h"
-#include "../include/shmem.h"
+#include "../include/lgui_shmem.h"
 #include "../include/caret.h"
 #include "../include/winnc.h"
 #include "../include/winbase.h"
@@ -50,18 +50,39 @@ InitGUIServer()
 {
 	RegisterServerControls();
 
-	InitMsgQueueHeap();
-	InitClipRegionHeap();
-	InitInvalidRegionHeap();
+	if(InitMsgQueueHeap() == false)
+	{
+		printerror("init queue error!");
+		return false;
+	}
+	if(InitClipRegionHeap() == false)	
+	{
+		printerror("init clip region error!");
+		return false;
+	}
+	if(InitInvalidRegionHeap() == false)
+	{
+		printerror("init invalid region error!");
+		return false;
+	}
 
-	if(!InitFrameBuffer()){
+	if(!InitFrameBuffer())
+	{
 		printerror("init framebuffer error!");
 		return false;
 	}
 
-	InitShareMemServer();
+	if(InitShareMemServer() == false)
+	{
+		printerror("init share memory error!");
+		return false;
+	}
 
-	CreateStockObject();
+	if(CreateStockObject() == false)
+	{
+		printerror("init object error!");
+		return false;
+	}
 
 	if(!InitIpcSocketServer())
 		return false;

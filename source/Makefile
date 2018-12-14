@@ -15,8 +15,11 @@ all:
 	cp ime/libime.so ../lib/libime.so
 
 	$(CC) -g -o lgui lgui.c -L../lib/ -lbmp -lcontrol -llguicore -lgdi -lhdc -lial -lime -lpthread
-
 	cp lgui ../bin/lgui
+
+	$(CC) -g -o lgui_test lgui_test.c -L../lib/ -lbmp -lcontrol -llguicore -lgdi -lhdc -lial -lime -lpthread
+	cp lgui_test ../bin/lgui_test
+
 	$(CC) -g -o notepad notepad.c -L../lib/ -lbmp -lcontrol -llguicore -lgdi -lhdc -lial -lime -lpthread
 	cp notepad ../bin/notepad
 
@@ -29,6 +32,8 @@ all:
 	$(CC) -g -o computerart computerart.c -L../lib/ -lbmp -lcontrol -llguicore -lgdi -lhdc -lial -lime -lpthread
 	cp computerart ../bin/computerart
 
+	$(CC) -g -o framebuffer_test framebuffer_test.c -L../lib/ -lbmp -lcontrol -llguicore -lgdi -lhdc -lial -lime -lpthread
+	cp framebuffer_test ../bin/framebuffer_test
 clean:
 	rm -rf ../lib/*.so
 	cd bmp;make clean

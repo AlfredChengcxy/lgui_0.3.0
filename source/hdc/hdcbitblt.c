@@ -19,7 +19,7 @@
 
 #include "../include/common.h"
 #include "../include/semaphore.h"
-#include "../include/shmem.h"
+#include "../include/lgui_shmem.h"
 #include "../include/socketio.h"
 #include "../include/blockheap.h"
 #include "../include/rect.h"

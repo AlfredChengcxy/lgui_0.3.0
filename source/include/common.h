@@ -72,11 +72,9 @@ extern "C" {
 
 
 
-#define FONT_16_16_SPEC		"/usr/local/lgui/resource/font1616.font"
-#define FONT_14_14_SPEC		"/usr/local/lgui/resource/font1414.font"
-#define FONT_12_12_SPEC		"/usr/local/lgui/resource/font1212.font"
-
-
+#define FONT_16_16_SPEC		"/home/zgq/Documents/cpp/lgui_0.3.0/resource/font1616.font"
+#define FONT_14_14_SPEC		"/home/zgq/Documents/cpp/lgui_0.3.0/resource/font1414.font"
+#define FONT_12_12_SPEC		"/home/zgq/Documents/cpp/lgui_0.3.0/resource/font1212.font"
 
 #define SHMEM_SIZE	1024*1024
 
@@ -216,7 +214,7 @@ typedef unsigned short		UINT16;
 typedef unsigned char		UINT08;
 
 typedef char*			LPCSTR;
-typedef UINT  			WPARAM;
+typedef DWORD			WPARAM;
 typedef DWORD			LPARAM;
 
 //typedef int				HDC;

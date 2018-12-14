@@ -32,7 +32,7 @@
 #include "../include/message.h"
 #include "../include/gdi.h"
 #include "../include/regclass.h"
-#include "../include/shmem.h"
+#include "../include/lgui_shmem.h"
 #include "../include/caret.h"
 #include "../include/winnc.h"
 #include "../include/winbase.h"

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libhdc.a  CMakeFiles/hdc.dir/hdc.c.o CMakeFiles/hdc.dir/hdcbitblt.c.o
+/usr/bin/ranlib libhdc.a
